@@ -12,6 +12,7 @@
 		D42FBDA61C51C91D0029A551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42FBDA41C51C91D0029A551 /* Main.storyboard */; };
 		D42FBDA81C51C91D0029A551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D42FBDA71C51C91D0029A551 /* Assets.xcassets */; };
 		D42FBDAB1C51C91D0029A551 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42FBDA91C51C91D0029A551 /* LaunchScreen.storyboard */; };
+		D42FBDB81C51CD3B0029A551 /* HypePullToInfinity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42FBDB71C51CD3B0029A551 /* HypePullToInfinity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D42FBDA71C51C91D0029A551 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D42FBDAA1C51C91D0029A551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D42FBDAC1C51C91D0029A551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D42FBDB71C51CD3B0029A551 /* HypePullToInfinity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HypePullToInfinity.swift; path = HypePullToInfinity/HypePullToInfinity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		D42FBD9F1C51C91D0029A551 /* HypePullToInfinityExample */ = {
 			isa = PBXGroup;
 			children = (
+				D42FBDB61C51CD2E0029A551 /* HypePullToInfinity */,
 				D42FBDA01C51C91D0029A551 /* AppDelegate.swift */,
 				D42FBDA21C51C91D0029A551 /* ViewController.swift */,
 				D42FBDA41C51C91D0029A551 /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				D42FBDAC1C51C91D0029A551 /* Info.plist */,
 			);
 			path = HypePullToInfinityExample;
+			sourceTree = "<group>";
+		};
+		D42FBDB61C51CD2E0029A551 /* HypePullToInfinity */ = {
+			isa = PBXGroup;
+			children = (
+				D42FBDB71C51CD3B0029A551 /* HypePullToInfinity.swift */,
+			);
+			name = HypePullToInfinity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D42FBDA31C51C91D0029A551 /* ViewController.swift in Sources */,
+				D42FBDB81C51CD3B0029A551 /* HypePullToInfinity.swift in Sources */,
 				D42FBDA11C51C91D0029A551 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
