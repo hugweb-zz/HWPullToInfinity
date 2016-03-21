@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TSA-Go-ZTc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TSA-Go-ZTc">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--HypePullToInfinityExample-->
+        <!--HWPullToInfinityExample-->
         <scene sceneID="nkJ-Rq-NUR">
             <objects>
                 <tableViewController id="pMU-Gs-Ozd" customClass="ViewController" customModule="HypePullToInfinityExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +17,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="th9-cd-mkB" id="oJQ-5L-c5W">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -28,7 +27,7 @@
                             <outlet property="delegate" destination="pMU-Gs-Ozd" id="dn7-Bg-KGP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="HypePullToInfinityExample" id="kgX-mk-MON"/>
+                    <navigationItem key="navigationItem" title="HWPullToInfinityExample" id="kgX-mk-MON"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oSr-PH-kR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

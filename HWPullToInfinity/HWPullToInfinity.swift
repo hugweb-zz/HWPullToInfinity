@@ -1,5 +1,5 @@
 //
-//  HypePullToInfinity.swift
+//  HWPullToInfinity.swift
 //  HypeUGC
 //
 //  Created by Hugues Blocher on 21/01/16.
@@ -9,7 +9,6 @@
 import UIKit
 import QuartzCore
 import ObjectiveC
-
 
 // MARK: Pull to refresh scrollView extension
 
@@ -98,29 +97,39 @@ extension UIScrollView {
 
 // MARK: Infinite Scroll
 
-enum HypePullToInfinityState {
+enum HWPullToInfinityState {
     case Stopped
     case Triggered
     case Loading
     case All
 }
 
-let HypePullToInfinityViewHeight: CGFloat = 60
-let HypePullToInfinityViewWidth: CGFloat = HypePullToInfinityViewHeight
+let HWPullToInfinityViewHeight: CGFloat = 60
+let HWPullToInfinityViewWidth: CGFloat = HWPullToInfinityViewHeight
 
-class HypePullToInfinityView: UIView {
+class HWPullToInfinityView: UIView {
 
     // MARK: Infinite properties
     
     var isHorizontal: Bool = false
-
+    var enabled: Bool = false
+    
+    private var _infiniteRefreshColor : UIColor = UIColor.grayColor()
+    var color : UIColor {
+        get {
+            return _infiniteRefreshColor
+        }
+        set(newColor) {
+            _activityIndicatorView?.color = newColor
+        }
+    }
+    
     private weak var scrollView: UIScrollView?
     private var infiniteScrollingHandler: (() -> Void)?
     private var viewForState: [AnyObject] = ["", "", "", ""]
     private var originalInset: CGFloat = 0.0
     private var wasTriggeredByUser: Bool = false
     private var isObserving: Bool = false
-    private var enabled: Bool = false
     private var isSetup: Bool = false
 
     private var _activityIndicatorView : UIActivityIndicatorView?
@@ -128,7 +137,7 @@ class HypePullToInfinityView: UIView {
         get {
             if _activityIndicatorView == nil {
                 _activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .White)
-                _activityIndicatorView?.color = UIColor.grayColor()
+                _activityIndicatorView?.color = _infiniteRefreshColor
                 _activityIndicatorView?.hidesWhenStopped = true
                 self.addSubview(_activityIndicatorView!)
             }
@@ -136,8 +145,8 @@ class HypePullToInfinityView: UIView {
         }
     }
     
-    private var _state: HypePullToInfinityState = .Stopped
-    private var state: HypePullToInfinityState {
+    private var _state: HWPullToInfinityState = .Stopped
+    private var state: HWPullToInfinityState {
         get {
             return _state
         }
@@ -145,7 +154,7 @@ class HypePullToInfinityView: UIView {
             if _state == newState {
                 return
             }
-            let previousState: HypePullToInfinityState = state
+            let previousState: HWPullToInfinityState = state
             _state = newState
             for otherView in self.viewForState {
                 if otherView is UIView {
@@ -219,9 +228,9 @@ class HypePullToInfinityView: UIView {
     func setScrollViewContentInsetForInfiniteScrolling() {
         var currentInsets: UIEdgeInsets = self.scrollView!.contentInset
         if self.isHorizontal {
-            currentInsets.right = self.originalInset + HypePullToInfinityViewWidth
+            currentInsets.right = self.originalInset + HWPullToInfinityViewWidth
         } else {
-            currentInsets.bottom = self.originalInset + HypePullToInfinityViewHeight
+            currentInsets.bottom = self.originalInset + HWPullToInfinityViewHeight
         }
         self.setScrollViewContentInset(currentInsets)
     }
@@ -271,16 +280,16 @@ class HypePullToInfinityView: UIView {
         } else if (keyPath == "contentSize") {
             self.layoutSubviews()
             if self.isHorizontal {
-                self.frame = CGRectMake(self.scrollView!.contentSize.width, 0, HypePullToInfinityViewWidth, self.scrollView!.contentSize.height)
+                self.frame = CGRectMake(self.scrollView!.contentSize.width, 0, HWPullToInfinityViewWidth, self.scrollView!.contentSize.height)
             } else {
-                self.frame = CGRectMake(0, self.scrollView!.contentSize.height, self.bounds.size.width, HypePullToInfinityViewHeight)
+                self.frame = CGRectMake(0, self.scrollView!.contentSize.height, self.bounds.size.width, HWPullToInfinityViewHeight)
             }
         }
     }
     
     // MARK: Infinite setters
     
-    func setCustomView(view: UIView, forState state: HypePullToInfinityState) {
+    func setCustomView(view: UIView, forState state: HWPullToInfinityState) {
         let viewPlaceholder: AnyObject = view
         if state == .All {
             self.viewForState[0...3] = [viewPlaceholder, viewPlaceholder, viewPlaceholder]
@@ -313,7 +322,7 @@ class HypePullToInfinityView: UIView {
 extension UIScrollView {
     
     private struct InfiniteAssociatedKeys {
-        static var infiniteScrollingView: HypePullToInfinityView?
+        static var infiniteScrollingView: HWPullToInfinityView?
         static var showsInfiniteScrolling : Bool = false
         static var infiniteScrollingHasBeenSetup : Bool = false
     }
@@ -337,7 +346,7 @@ extension UIScrollView {
         }
         set(value) {
             self.infiniteScrollingView.hidden = !showsInfiniteScrolling
-            if !showsInfiniteScrolling {
+            if !value {
                 if self.infiniteScrollingView.isObserving {
                     self.removeObserver(self.infiniteScrollingView, forKeyPath: "contentOffset")
                     self.removeObserver(self.infiniteScrollingView, forKeyPath: "contentSize")
@@ -352,29 +361,29 @@ extension UIScrollView {
                     self.infiniteScrollingView.isObserving = true
                     self.infiniteScrollingView.setNeedsLayout()
                     if self.infiniteScrollingView.isHorizontal {
-                        self.infiniteScrollingView.frame = CGRectMake(self.contentSize.width, 0, HypePullToInfinityViewWidth, self.contentSize.height)
+                        self.infiniteScrollingView.frame = CGRectMake(self.contentSize.width, 0, HWPullToInfinityViewWidth, self.contentSize.height)
                     } else {
-                        self.infiniteScrollingView.frame = CGRectMake(0, self.contentSize.height, self.infiniteScrollingView.bounds.size.width, HypePullToInfinityViewHeight)
+                        self.infiniteScrollingView.frame = CGRectMake(0, self.contentSize.height, self.infiniteScrollingView.bounds.size.width, HWPullToInfinityViewHeight)
                     }
                 }
             }
         }
     }
     
-    var infiniteScrollingView: HypePullToInfinityView {
+    var infiniteScrollingView: HWPullToInfinityView {
         get {
-            return objc_getAssociatedObject(self, &InfiniteAssociatedKeys.infiniteScrollingView) as! HypePullToInfinityView
+            return objc_getAssociatedObject(self, &InfiniteAssociatedKeys.infiniteScrollingView) as! HWPullToInfinityView
         }
         set {
             self.willChangeValueForKey("UIScrollViewInfiniteScrollingView")
-            objc_setAssociatedObject(self, &InfiniteAssociatedKeys.infiniteScrollingView, newValue as HypePullToInfinityView?, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &InfiniteAssociatedKeys.infiniteScrollingView, newValue as HWPullToInfinityView?, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             self.didChangeValueForKey("UIScrollViewInfiniteScrollingView")
         }
     }
     
     func addInfiniteScrollingWithActionHandler(actionHandler: () -> Void) {
         if !self.infiniteScrollingHasBeenSetup {
-            let view: HypePullToInfinityView = HypePullToInfinityView(frame: CGRectMake(0, self.contentSize.height, self.bounds.size.width, HypePullToInfinityViewHeight))
+            let view: HWPullToInfinityView = HWPullToInfinityView(frame: CGRectMake(0, self.contentSize.height, self.bounds.size.width, HWPullToInfinityViewHeight))
             view.infiniteScrollingHandler = actionHandler
             view.scrollView = self
             self.addSubview(view)
@@ -387,7 +396,7 @@ extension UIScrollView {
     
     func addHorizontalInfiniteScrollingWithActionHandler(actionHandler: () -> Void) {
         if !self.infiniteScrollingHasBeenSetup {
-            let view: HypePullToInfinityView = HypePullToInfinityView(frame: CGRectMake(self.contentSize.width, 0, HypePullToInfinityViewWidth, self.contentSize.height))
+            let view: HWPullToInfinityView = HWPullToInfinityView(frame: CGRectMake(self.contentSize.width, 0, HWPullToInfinityViewWidth, self.contentSize.height))
             view.infiniteScrollingHandler = actionHandler
             view.scrollView = self
             view.isHorizontal = true

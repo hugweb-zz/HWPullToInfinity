@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  HypePullToInfinityExample
+//  HWPullToInfinityExample
 //
 //  Created by Hugues Blocher on 22/01/16.
 //  Copyright © 2016 hw. All rights reserved.

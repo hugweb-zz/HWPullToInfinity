@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  HypePullToInfinityExample
+//  HWPullToInfinityExample
 //
 //  Created by Hugues Blocher on 22/01/16.
 //  Copyright © 2016 hw. All rights reserved.
@@ -22,7 +22,7 @@ class ViewController: UITableViewController {
         tableView.reloadData()
         
         // Pull to refresh
-        tableView.addPullToRefreshWithTitleAndActionHandler(NSAttributedString(string: "Loading...")) { () -> Void in
+        tableView.addPullToRefreshWithActionHandler { () -> Void in
             let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(handlerDelay * Double(NSEC_PER_SEC)))
             dispatch_after(delayTime, dispatch_get_main_queue()) {
                 self.tableView.stopPullToRefresh()
@@ -30,7 +30,7 @@ class ViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
-        tableView.pullRefreshColor = UIColor.redColor()
+        tableView.pullRefreshColor = UIColor.darkGrayColor()
         
         // Infinite scroll
         tableView.addInfiniteScrollingWithActionHandler { () -> Void in
@@ -46,6 +46,7 @@ class ViewController: UITableViewController {
                 }
             }
         }
+        tableView.infiniteScrollingView.color = UIColor.darkGrayColor()
     }
 
     override func didReceiveMemoryWarning() {

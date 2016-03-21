@@ -12,18 +12,18 @@
 		D42FBDA61C51C91D0029A551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42FBDA41C51C91D0029A551 /* Main.storyboard */; };
 		D42FBDA81C51C91D0029A551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D42FBDA71C51C91D0029A551 /* Assets.xcassets */; };
 		D42FBDAB1C51C91D0029A551 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D42FBDA91C51C91D0029A551 /* LaunchScreen.storyboard */; };
-		D42FBDB81C51CD3B0029A551 /* HypePullToInfinity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42FBDB71C51CD3B0029A551 /* HypePullToInfinity.swift */; };
+		D42FBDB81C51CD3B0029A551 /* HWPullToInfinity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42FBDB71C51CD3B0029A551 /* HWPullToInfinity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D42FBD9D1C51C91D0029A551 /* HypePullToInfinityExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypePullToInfinityExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D42FBD9D1C51C91D0029A551 /* HWPullToInfinityExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HWPullToInfinityExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42FBDA01C51C91D0029A551 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D42FBDA21C51C91D0029A551 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D42FBDA51C51C91D0029A551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D42FBDA71C51C91D0029A551 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D42FBDAA1C51C91D0029A551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D42FBDAC1C51C91D0029A551 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D42FBDB71C51CD3B0029A551 /* HypePullToInfinity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HypePullToInfinity.swift; path = HypePullToInfinity/HypePullToInfinity.swift; sourceTree = "<group>"; };
+		D42FBDB71C51CD3B0029A551 /* HWPullToInfinity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HWPullToInfinity.swift; path = ../HWPullToInfinity/HWPullToInfinity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +40,7 @@
 		D42FBD941C51C91D0029A551 = {
 			isa = PBXGroup;
 			children = (
-				D42FBD9F1C51C91D0029A551 /* HypePullToInfinityExample */,
+				D42FBD9F1C51C91D0029A551 /* HWPullToInfinityExample */,
 				D42FBD9E1C51C91D0029A551 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,15 +48,15 @@
 		D42FBD9E1C51C91D0029A551 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D42FBD9D1C51C91D0029A551 /* HypePullToInfinityExample.app */,
+				D42FBD9D1C51C91D0029A551 /* HWPullToInfinityExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D42FBD9F1C51C91D0029A551 /* HypePullToInfinityExample */ = {
+		D42FBD9F1C51C91D0029A551 /* HWPullToInfinityExample */ = {
 			isa = PBXGroup;
 			children = (
-				D42FBDB61C51CD2E0029A551 /* HypePullToInfinity */,
+				D42FBDB61C51CD2E0029A551 /* HWPullToInfinity */,
 				D42FBDA01C51C91D0029A551 /* AppDelegate.swift */,
 				D42FBDA21C51C91D0029A551 /* ViewController.swift */,
 				D42FBDA41C51C91D0029A551 /* Main.storyboard */,
@@ -64,23 +64,23 @@
 				D42FBDA91C51C91D0029A551 /* LaunchScreen.storyboard */,
 				D42FBDAC1C51C91D0029A551 /* Info.plist */,
 			);
-			path = HypePullToInfinityExample;
+			path = HWPullToInfinityExample;
 			sourceTree = "<group>";
 		};
-		D42FBDB61C51CD2E0029A551 /* HypePullToInfinity */ = {
+		D42FBDB61C51CD2E0029A551 /* HWPullToInfinity */ = {
 			isa = PBXGroup;
 			children = (
-				D42FBDB71C51CD3B0029A551 /* HypePullToInfinity.swift */,
+				D42FBDB71C51CD3B0029A551 /* HWPullToInfinity.swift */,
 			);
-			name = HypePullToInfinity;
+			name = HWPullToInfinity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D42FBD9C1C51C91D0029A551 /* HypePullToInfinityExample */ = {
+		D42FBD9C1C51C91D0029A551 /* HWPullToInfinityExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D42FBDAF1C51C91D0029A551 /* Build configuration list for PBXNativeTarget "HypePullToInfinityExample" */;
+			buildConfigurationList = D42FBDAF1C51C91D0029A551 /* Build configuration list for PBXNativeTarget "HWPullToInfinityExample" */;
 			buildPhases = (
 				D42FBD991C51C91D0029A551 /* Sources */,
 				D42FBD9A1C51C91D0029A551 /* Frameworks */,
@@ -90,9 +90,9 @@
 			);
 			dependencies = (
 			);
-			name = HypePullToInfinityExample;
+			name = HWPullToInfinityExample;
 			productName = HypePullToInfinityExample;
-			productReference = D42FBD9D1C51C91D0029A551 /* HypePullToInfinityExample.app */;
+			productReference = D42FBD9D1C51C91D0029A551 /* HWPullToInfinityExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -110,7 +110,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D42FBD981C51C91D0029A551 /* Build configuration list for PBXProject "HypePullToInfinityExample" */;
+			buildConfigurationList = D42FBD981C51C91D0029A551 /* Build configuration list for PBXProject "HWPullToInfinityExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -123,7 +123,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D42FBD9C1C51C91D0029A551 /* HypePullToInfinityExample */,
+				D42FBD9C1C51C91D0029A551 /* HWPullToInfinityExample */,
 			);
 		};
 /* End PBXProject section */
@@ -147,7 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D42FBDA31C51C91D0029A551 /* ViewController.swift in Sources */,
-				D42FBDB81C51CD3B0029A551 /* HypePullToInfinity.swift in Sources */,
+				D42FBDB81C51CD3B0029A551 /* HWPullToInfinity.swift in Sources */,
 				D42FBDA11C51C91D0029A551 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,10 +261,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = HypePullToInfinityExample/Info.plist;
+				INFOPLIST_FILE = HWPullToInfinityExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hw.HypePullToInfinityExample.HypePullToInfinityExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.HWPullToInfinityExample;
+				PRODUCT_NAME = HWPullToInfinityExample;
 			};
 			name = Debug;
 		};
@@ -272,17 +272,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = HypePullToInfinityExample/Info.plist;
+				INFOPLIST_FILE = HWPullToInfinityExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hw.HypePullToInfinityExample.HypePullToInfinityExample;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.HWPullToInfinityExample;
+				PRODUCT_NAME = HWPullToInfinityExample;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D42FBD981C51C91D0029A551 /* Build configuration list for PBXProject "HypePullToInfinityExample" */ = {
+		D42FBD981C51C91D0029A551 /* Build configuration list for PBXProject "HWPullToInfinityExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D42FBDAD1C51C91D0029A551 /* Debug */,
@@ -291,13 +291,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D42FBDAF1C51C91D0029A551 /* Build configuration list for PBXNativeTarget "HypePullToInfinityExample" */ = {
+		D42FBDAF1C51C91D0029A551 /* Build configuration list for PBXNativeTarget "HWPullToInfinityExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D42FBDB01C51C91D0029A551 /* Debug */,
 				D42FBDB11C51C91D0029A551 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
