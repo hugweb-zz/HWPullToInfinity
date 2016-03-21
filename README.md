@@ -2,7 +2,7 @@
 
 Swift pull to refresh and infinite scrolling finally met for your favorites UITableView &amp; UICollectionView
 
-<p align="center"><img src="https://github.com/hugweb/HWPullToInfinity/blob/master/example/HWPullToInfinity/Assets/example.gif?raw=true"/></p>
+<img src="https://github.com/hugweb/HWPullToInfinity/blob/master/HWPullToInfinityExample/Assets.xcassets/example.dataset/example.gif"/>
 
 ##Pull to refresh
 
